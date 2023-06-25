@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} Add farm {% endblock %}
+
+{% block body %}
+
+<h1>Add Farm</h1>
+
+<form action="" method="post" novalidate>
+    {% csrf_token %}
+
+    {{farm_form.as_p}}
+    {{farmer_linker_form.as_p}}
+
+    <input type="submit" value="Create Farm"/>
+</form>
+
+{% endblock %}

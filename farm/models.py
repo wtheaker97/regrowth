@@ -79,9 +79,11 @@ class FarmFarmerLinker(BaseModel):
         blank=False
     )
     started_on = models.DateField(
+        null=True,
         help_text="Date the farmer started farming this farm"
     )
     stopped_on = models.DateField(
+        null=True,
         help_text="Date the farmer stopped farming this farm"
     )
 
@@ -117,11 +119,11 @@ class FarmFieldLinker(BaseModel):
     )
     acquired_on = models.DateField(
         help_text="Date the field was made part of the farm",
-        blank=True
+        null=True
     )
     removed_on = models.DateField(
         help_text="Date the field was removed from the farm",
-        blank=True
+        null=True
     )
 
     def __str__(self):

@@ -5,7 +5,20 @@
 {% block body %}
 
 {% if user.is_authenticated %}
-    <h3>Welcome {{user.username}}</h3>
+    <h3>Welcome {{user.first_name}}</h3>
+    <h5>Farms:</h5>
+    {% if farms %}
+        <ul>
+            {% for farm in farms %}
+                <li>{{ farm.farm }} - {{ farm.farmer }}</li>
+            {% endfor %}
+        </ul>
+        {% for farm in farms %}
+
+        {% endfor %}
+    {% endif %}
+
+    <p><a href="{% url 'create_farm' %}">Create Farm</a></p>
     <p><a href="{% url 'logout' %}">Logout</a></p>
 {% else %}
     <h3>You are not authenticated</h3>
