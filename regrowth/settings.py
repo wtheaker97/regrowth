@@ -137,6 +137,7 @@ if not DEBUG:
     EMAIL_USE_TLS = True
     EMAIL_HOST_PASSWORD = ""
 else:
+    # for development purposes just display emails to console
     EMAIL_BACKEND = (
         "django.core.mail.backends.console.EmailBackend"
     )
