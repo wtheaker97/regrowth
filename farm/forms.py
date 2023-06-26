@@ -10,5 +10,8 @@ class FarmForm(forms.ModelForm):
 class FarmFarmerLinkerForm(forms.ModelForm):
     class Meta:
         model = models.FarmFarmerLinker
-        fields = ["farmer"]
+        fields = ["farmer", "started_on"]
+        widgets = {
+            "started_on": forms.DateInput(attrs={"type": "date"}),
+        }
 

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} {{farm.name}} {% endblock %}
+
+{% block body %}
+
+<h1>{{farm.name}}</h1>
+
+<p><strong>Farm name:</strong> {{farm.name}}</p>
+<p><strong>Farm type:</strong> {{farm.farm_type}}</p>
+<p><strong>Farmer:</strong> {{farmer.name}}</p>
+
+<h2>{{farmer.name}}</h2>
+{% if started_on %}
+    <p>Has been farming {{farm.name}} since {{started_on}}</p>
+{% else %}
+    <p>Unknown start date</p>
+{% endif %}
+
+
+{% endblock %}

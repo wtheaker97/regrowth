@@ -5,6 +5,10 @@
         <title>{% block title%} {% endblock %}</title>
     </head>
 
+    <p><a href="{% url 'home' %}">Home</a></p>
+    <p><a href="{% url 'all_farms' %}">All farms</a></p>
+    <p><a href="{% url 'logout' %}">Logout</a></p>
+
     <body>
         {% block body %} {% endblock %}
     </body>

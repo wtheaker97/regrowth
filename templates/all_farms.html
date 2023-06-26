@@ -5,8 +5,7 @@
 {% block body %}
 
 {% if user.is_authenticated %}
-    <h3>Welcome {{user.first_name}}</h3>
-    <h5>My farms:</h5>
+    <h2>Farms:</h2>
     {% if farms %}
         <ul>
             {% for farm in farms %}
@@ -14,7 +13,7 @@
             {% endfor %}
         </ul>
     {% else %}
-        <p>You don't have any farms yet, you can add one here though: <a href="{% url 'create_farm' %}">add farm</a></p>
+        <p>There aren't any farms yet, you can add one here though: <a href="{% url 'create_farm' %}">add farm</a></p>
     {% endif %}
 
     <p><a href="{% url 'create_farm' %}">Add Farm</a></p>
