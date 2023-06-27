@@ -10,7 +10,7 @@
     {% if farms %}
         <ul>
             {% for farm in farms %}
-                <li><a href="/farm/{{ farm.farm.id }}">{{ farm.farm }} - {{ farm.farmer.name }}</a></li>
+                <li><a href="/farm/{{ farm.farm.id }}">{{ farm.farm }}</a></li>
             {% endfor %}
         </ul>
     {% else %}

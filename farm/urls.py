@@ -8,4 +8,5 @@ urlpatterns = [
     path("farms/all", views.all_farms, name="all_farms"),
     path("farm/create", views.create_farm, name="create_farm"),
     path("farm/<int:farm_id>/", views.farm_detail, name="farm_detail"),
+    path("farm/<int:farm_id>/create_field", views.create_farm_field, name="create_farm_field")
 ]

@@ -17,5 +17,17 @@
     <p>Unknown start date</p>
 {% endif %}
 
+<h2>Fields</h2>
+{% if fields %}
+    <ul>
+        {% for field in fields %}
+            <p>{{field.name}} ({{field.size}} acres)</p>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>This farm has no fields. Add some here: </p>
+{% endif %}
+<p><a href="/farm/{{ farm.id }}/create_field">Add field</a></p>
+
 
 {% endblock %}
