@@ -1,3 +1,4 @@
+from typing import Iterable, Optional
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -37,6 +38,10 @@ class Farm(BaseModel):
         default="self_farmed"
     )
 
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        return super().save(*args, **kwargs)
+
     def __str__(self):
         return f"{self.name}"
 
@@ -68,7 +73,7 @@ class Farmer(BaseModel):
         return f"{self.first_name} {self.surname}"
 
     def __str__(self):
-        return f"{self.first_name} {self.surname}"
+        return self.name
 
 
 class FarmFarmerLinker(BaseModel):

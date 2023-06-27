@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.urls import reverse
+
 
 from . import forms
 from . import models
@@ -23,7 +25,7 @@ def home(request):
             context={}
         return render(request, "home.html", context)
     else:
-        return redirect("accounts/login")
+        return redirect(reverse("login"))
 
 def all_farms(request):
     farms = models.Farm.objects.all()

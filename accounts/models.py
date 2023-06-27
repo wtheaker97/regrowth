@@ -12,7 +12,10 @@ class User(auth_models.User):
                 user=self
             )
             farmer.save()
-        return user
+            return user
+        else:
+            return super().save(*args, **kwargs)
+
 
     def __str__(self):
-        return "{self.username} ({self.email})"
+        return f"{self.username} ({self.email})"
